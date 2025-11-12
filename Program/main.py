@@ -109,14 +109,14 @@ def quizmaker():
                     fer_maker.encrypt(str(right_answer).encode()).decode() + "\n"
                 )
 
-        print(f"\n✅ Quiz '{name}' wurde erfolgreich erstellt!")
-        print(f"📁 Dateien gespeichert unter: {folder_path}\n")
+        print(f"\n Quiz '{name}' wurde erfolgreich erstellt!")
+        print(f" Dateien gespeichert unter: {folder_path}\n")
     else:
-        print("\n❌ Erstellung abgebrochen. Es wurden keine Dateien gespeichert.\n")
+        print("\n Erstellung abgebrochen. Es wurden keine Dateien gespeichert.\n")
 
 
 def quizsolver():
-    print("🧩 Quiz lösen kommt bald...")
+    print(" Quiz lösen kommt bald...")
 
 
 while True:
