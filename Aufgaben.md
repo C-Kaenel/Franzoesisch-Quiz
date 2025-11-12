@@ -8,5 +8,5 @@ Nach Abschluss der Aufgabe bitte diese abhaken.
 ## Aufgaben
 - Erich: Auftragsanalyse und Kontaktperson  
 - Justin: PAP des Auftrags auf GitHub erstellen  
-- Constantin: IPERKA
+- Constantin: Zeitplan 
  
