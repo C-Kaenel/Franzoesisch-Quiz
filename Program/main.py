@@ -1,4 +1,5 @@
 import os
+import sys
 from fileinput import filename
 import random
 from yaspin import yaspin
@@ -6,6 +7,14 @@ from cryptography.fernet import Fernet
 import inquirer
 from fpdf import FPDF
 
+def get_base_dir():
+    if getattr(sys, "frozen", False):
+        return os.path.dirname(sys.executable)  # Ordner der .exe
+    return os.path.dirname(os.path.abspath(__file__))  # Ordner des .py-Skripts
+
+BASE_DIR = get_base_dir()
+OUTPUT_ROOT = os.path.join(BASE_DIR, "Output")
+os.makedirs(OUTPUT_ROOT, exist_ok=True)  # erstellt Output neben .exe/.py
 
 # Quiz erstellen
 def quizmaker():
@@ -135,8 +144,8 @@ def quizmaker():
     # Nur speichern, wenn bestätigt
     if create == "OK":
         print("\nSpeichere Quizdaten...")
-        # Ordner erstellen
-        folder_path = os.path.join(os.path.dirname(__file__), "output", name)
+        # Ordner erstellen im Output-Ordner neben .exe/.py
+        folder_path = os.path.join(OUTPUT_ROOT, name)
         os.makedirs(folder_path, exist_ok=True)
 
         # Schlüssel erzeugen und speichern
@@ -166,8 +175,7 @@ def quizsolver():
     print("\n=== Quiz ausfüllen ===")
     nameNutzer = input("Bitte geben Sie Ihren Namen ein: ").strip()
 
-    base_dir = os.path.dirname(__file__)
-    output_dir = os.path.join(base_dir, "output")
+    output_dir = OUTPUT_ROOT
 
     # Prüfen, ob überhaupt Quizzes existieren
     if not os.path.isdir(output_dir):
@@ -338,6 +346,7 @@ def quizsolver():
         pdf.set_x(pdf.l_margin)
         pdf.multi_cell(page_width, 6, "Ergebnis: " + ("Richtig" if res["ist_richtig"] else "Falsch"))
 
+    #wird automatisch im passenden Quiz-Unterordner im Output-Ordner gespeichert
     report_path = os.path.join(folder_path, f"{nameNutzer}_{quiz}_Report.pdf")
     pdf.output(report_path)
 
