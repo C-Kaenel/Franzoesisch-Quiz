@@ -16,3 +16,4 @@ main.py
 start.py
 	dose the importing of requirements (inquirer, cryptography usw…)
 	starts the other programs
+ggg
