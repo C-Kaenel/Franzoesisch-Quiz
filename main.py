@@ -1,8 +1,6 @@
 import os
 import sys
-from fileinput import filename
 import random
-from yaspin import yaspin
 from cryptography.fernet import Fernet
 import inquirer
 from fpdf import FPDF
@@ -355,8 +353,9 @@ def quizsolver():
 
 
 while True:
+    print("Willkommen beim Quiz-Programm")
     MainMenu = inquirer.list_input(
-        "\nWillkommen beim Quiz-Programm\nBitte wählen Sie eine Funktion:",
+        "Bitte wählen Sie eine Funktion",
         choices=['Quiz erstellen', 'Quiz ausfüllen', 'Beenden']
     )
     if MainMenu == 'Quiz erstellen':
