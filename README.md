@@ -1,4 +1,5 @@
 # Franzoesisch-Quiz
-Das Projekt ist eine Konsolenanwendung zur Erstellung von Quizzes, bei der eine maximale Anzahl an Antwortmöglichkeiten festgelegt und die Punktevergabe automatisch 
-berechnet wird. Die Anwendung ermöglicht es, Änderungen zu speichern, sodass diese persistent bleiben und auf anderen Geräten erneut geladen oder weiterverwendet 
-werden können.Für eine Frnazösisch Lehrerin an der Kantonsschule Baden
+DDieses Projekt ist eine Konsolenanwendung zur Erstellung, Durchführung und Verwaltung von Quizzen, die im Rahmen eines schulischen 
+Auftrags nach den Anforderungen eines Klienten entwickelt wurde. Die Anwendung ermöglicht das Erstellen von Quizzen mit einer festgelegten 
+maximalen Anzahl an Antwortmöglichkeiten, berechnet die Punktevergabe automatisch und speichert Änderungen persistent, 
+sodass Quizze auch später oder auf anderen Geräten weiterverwendet werden können.
